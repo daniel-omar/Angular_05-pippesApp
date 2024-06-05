@@ -1,0 +1,62 @@
+<p-panel class="m-1">
+  <ng-template pTemplate="header">
+    <span class="text-primary font-semibold text-xl">Básicos</span>
+  </ng-template>
+
+  <p>Pipes incluidos en angular, usualmente en el Common Module</p>
+</p-panel>
+
+<div class="grid mt-2">
+  <div class="col-12 md:col-4">
+    <p-card header="uppercase">{{nameLower | uppercase}}</p-card>
+  </div>
+  <div class="col-12 md:col-4">
+    <p-card header="lowercase">{{nameUpper | lowercase}}</p-card>
+  </div>
+  <div class="col-12 md:col-4">
+    <p-card header="titlecase">{{nameTitle | titlecase}}</p-card>
+  </div>
+  <div class="col-12 md:col-6">
+    <p-card header="date">
+      <ol>
+        <li>Fecha </li>
+        <li>Fecha | date </li>
+        <li>Fecha | date :'short'</li>
+        <li>Fecha | date :'long'</li>
+        <li>Fecha | date :'MMMM'</li>
+        <li>Fecha | date :'MMMM dd,yyyy'</li>
+        <li>Fecha | date :'M/d/yy' </li>
+        <li>Fecha | date :'MM/dd/yyyy'</li>
+      </ol>
+      <hr>
+      <ol>
+        <li>Fecha | date :'long':'GMT-6'</li>
+        <li>Fecha | date :'long':'GMT-4'</li>
+        <li>Fecha | date :'long':':'es-PR'</li>
+        <li>Fecha | date :'long':':'fr-CA'</li>
+      </ol>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-6">
+    <p-card header="date">
+      <ol>
+        <li>{{customDate}} </li>
+        <li>{{customDate | date}}</li>
+        <li>{{customDate | date:'short'}}</li>
+        <li>{{customDate | date:'long'}}</li>
+        <li>{{customDate | date:'MMMM'}}</li>
+        <li>{{customDate | date:'MMMM dd,yyyy'}}</li>
+        <li>{{customDate | date:'M/d/yy'}}</li>
+        <li>{{customDate | date:'MM/dd/yyyy'}}</li>
+      </ol>
+      <hr>
+      <ol>
+        <li>{{customDate | date :'long':'GMT-6'}}</li>
+        <li>{{customDate | date :'long':'GMT-4'}}</li>
+        <li>{{customDate | date :'long':'':'es-PR'}}</li>
+        <li>{{customDate | date :'long':'':'fr-CA'}}</li>
+      </ol>
+    </p-card>
+  </div>
+
+</div>

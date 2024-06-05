@@ -1,0 +1,45 @@
+<p-panel class="m-1">
+  <ng-template pTemplate="header">
+    <span class="text-primary font-semibold text-xl">Pipes personalizos</span>
+  </ng-template>
+
+  <p>Pipes personalziados create to {{'nosotros' | toggleCase:isUpperCase }}</p>
+</p-panel>
+
+<p-toolbar>
+  <div class="p-toolbar-group-start">
+    <p-button label="Toggle Case" icon="pi pi-plus" class="mr-2" (click)="toggleUpperCase()"></p-button>
+  </div>
+  <div class="p-toolbar-group-end">
+    <p-button class="mr-1" label="Por nombre" icon="pi pi-sort" styleClass="p-button-success"
+      (click)="changeSort('name')"></p-button>
+    <p-button class="mr-1" label="Por volar" icon="pi pi-sort" styleClass="p-button-danger"
+      (click)="changeSort('canFly')"></p-button>
+    <p-button class="mr-1" label="Por color" icon="pi pi-sort" styleClass="p-button-help"
+      (click)="changeSort('color')"></p-button>
+  </div>
+</p-toolbar>
+
+
+<div class="grid">
+  <div class="col mt-2 ">
+    <p-panel header="Heroes">
+      <p-table [value]="heroes | sortBy:sortByType:sortAsc" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Name</th>
+            <th>Can fly</th>
+            <th>Color</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-hero>
+          <tr>
+            <td>{{ hero.name }}</td>
+            <td>{{ hero.canFly | canFly }}</td>
+            <td>{{ hero.color }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-panel>
+  </div>
+</div>

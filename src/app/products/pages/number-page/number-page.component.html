@@ -1,0 +1,25 @@
+<p-panel class="m-1">
+  <ng-template pTemplate="header">
+    <span class="text-primary font-semibold text-xl">Números</span>
+  </ng-template>
+
+  <p></p>
+</p-panel>
+
+
+
+<div class="grid mt-2">
+  <div class="col-12 md:col-4">
+    <p-card header="Ventas netas">{{totalSells +123| number : '1.2-5'}}</p-card>
+  </div>
+  <div class="col-12 md:col-4">
+    <!-- symbol-narrow : indica que se usara el simbolo del idioma en la cantidad -->
+    <!-- 2-5 : indica que se mostrara de 2 como minimo a 5 decimales como máximo -->
+    <p-card header="Ventas brutas">{{totalSells | currency : 'HNL':'symbol-narrow':'1.2-6'}}</p-card>
+    <!-- code : indica que se usara el codigo del idioma en la cantidad -->
+    <p-card header="Ventas brutas">{{totalSells | currency :'HNL':'code':'1.2-6'}}</p-card>
+  </div>
+  <div class="col-12 md:col-4">
+    <p-card header="Ganancia porcentual">{{percent | percent:'1.2-2'}}</p-card>
+  </div>
+</div>
